@@ -1,0 +1,32 @@
+@keyframes confettiParticle {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  5% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--velocity-x), calc(var(--velocity-y) + 100vh)) scale(0.5) rotate(calc(var(--rotation-speed) * 20));
+    opacity: 0;
+  }
+}
+
+.container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  animation: confettiParticle 3s ease-out forwards;
+}
+
+.particleInner {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.8));
+}

@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container:has([disabled]) {
+  opacity: 0.5;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.slot {
+  position: relative;
+  display: flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--input);
+  border-bottom: 1px solid var(--input);
+  border-right: 1px solid var(--input);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background-color: var(--input-background);
+  transition: all 150ms;
+  outline: none;
+}
+
+.slot:first-child {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  border-left: 1px solid var(--input);
+}
+
+.slot:last-child {
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.slot[data-active="true"] {
+  z-index: 10;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px rgb(var(--ring) / 0.5);
+}
+
+.slot[aria-invalid="true"] {
+  border-color: var(--destructive);
+}
+
+.slot[data-active="true"][aria-invalid="true"] {
+  border-color: var(--destructive);
+  box-shadow: 0 0 0 3px rgb(var(--destructive) / 0.2);
+}
+
+.caret {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caretLine {
+  background-color: var(--foreground);
+  height: 1rem;
+  width: 1px;
+  animation: caretBlink 1000ms infinite;
+}
+
+@keyframes caretBlink {
+  0%, 70%, 100% {
+    opacity: 1;
+  }
+  20%, 50% {
+    opacity: 0;
+  }
+}

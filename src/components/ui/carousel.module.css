@@ -1,0 +1,19 @@
+.root { position: relative; }
+
+.contentOverflow { overflow: hidden; }
+
+.innerFlex { display: flex; }
+.innerHorizontal { margin-left: -1rem; }
+.innerVertical { margin-top: -1rem; flex-direction: column; }
+
+.itemBase { min-width: 0; flex-shrink: 0; flex-grow: 0; flex-basis: 100%; }
+.itemPl4 { padding-left: 1rem; }
+.itemPt4 { padding-top: 1rem; }
+
+.buttonAbsolute { position: absolute; border-radius: 9999px; }
+.size8 { width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; }
+
+.prevHorizontal { top: 50%; left: -3rem; transform: translateY(-50%); }
+.prevVertical { top: -3rem; left: 50%; transform: translateX(-50%) rotate(90deg); }
+.nextHorizontal { top: 50%; right: -3rem; transform: translateY(-50%); }
+.nextVertical { bottom: -3rem; left: 50%; transform: translateX(-50%) rotate(90deg); }

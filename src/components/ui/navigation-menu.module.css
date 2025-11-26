@@ -1,0 +1,99 @@
+.root {
+  position: relative;
+  display: flex;
+  max-width: max-content;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  flex: 1 1 auto;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.item { position: relative; }
+
+.trigger {
+  display: inline-flex;
+  height: 2.25rem; /* h-9 */
+  max-width: max-content;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  background: var(--background);
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.trigger:hover, .trigger:focus { background: var(--accent); color: var(--accent-foreground); }
+.trigger[disabled] { pointer-events: none; opacity: 0.5; }
+.trigger .chevron { position: relative; top: 1px; margin-left: 0.25rem; width: 0.75rem; height: 0.75rem; transition: transform 0.3s; }
+.trigger[data-state="open"] .chevron { transform: rotate(180deg); }
+
+.content {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+}
+@media (min-width: 768px) {
+  .content { position: absolute; width: auto; }
+}
+
+.viewportWrap { position: absolute; top: 100%; left: 0; z-index: 50; display: flex; justify-content: center; }
+.viewport {
+  transform-origin: top center;
+  background: var(--popover);
+  color: var(--popover-foreground);
+  margin-top: 0.375rem;
+  height: var(--radix-navigation-menu-viewport-height);
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0,0,0,0.05));
+}
+@media (min-width: 768px) {
+  .viewport { width: var(--radix-navigation-menu-viewport-width); }
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-radius: 0.125rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  outline: none;
+}
+.link:hover, .link:focus { background: var(--accent); color: var(--accent-foreground); }
+.link[data-active="true"] { background: rgba(0,0,0,0.03); }
+.link svg:not([class*='size-']) { width: 1rem; height: 1rem; }
+
+.indicator {
+  top: 100%;
+  z-index: 1;
+  display: flex;
+  height: 0.375rem;
+  align-items: end;
+  justify-content: center;
+  overflow: hidden;
+}
+.indicatorDot {
+  background: var(--border);
+  position: relative;
+  top: 60%;
+  height: 0.5rem;
+  width: 0.5rem;
+  transform: rotate(45deg);
+  border-top-left-radius: 0.125rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}

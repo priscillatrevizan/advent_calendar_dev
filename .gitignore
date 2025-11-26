@@ -1,0 +1,70 @@
+# .gitignore - Node.js + arquivos/segredos que não devem ir para a cloud
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build / distribuição / cache
+dist/
+build/
+.out/
+.next/
+coverage/
+lib/
+.cache/
+.parcel-cache/
+.pnp/
+.pnp.js
+
+# Arquivos de ambiente / segredos (não commitar)
+.env
+.env.*          # arquivos de variáveis de ambiente por ambiente
+!.env.example   # manter o exemplo no repositório se existir
+*.pem
+*.key
+*.crt
+service-account*.json
+credentials
+secrets.*
+*.p12
+
+# Provedores / infra / estado
+.terraform/
+terraform.tfstate*
+crash.log
+*.tfvars
+.override.tf
+.vagrant/
+
+# Configs/credenciais de cloud locais
+.aws/
+.gcloud/
+.azure/
+
+# IDE / editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.sln
+*.swp
+
+# Logs e arquivos temporários
+logs/
+*.log
+*.tmp
+npm-debug.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Docker (arquivos locais que não devem ir para cloud)
+docker-compose.override.yml
+.env.docker
+
+# Outros
+node-repl-history

@@ -1,0 +1,41 @@
+.group {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 0.375rem;
+}
+
+.group[data-variant="outline"] {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.item {
+  min-width: 0;
+  flex: 1;
+  flex-shrink: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.item:first-child {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.item:last-child {
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.item:focus,
+.item:focus-visible {
+  z-index: 10;
+}
+
+.item[data-variant="outline"] {
+  border-left: 0;
+}
+
+.item[data-variant="outline"]:first-child {
+  border-left: 1px solid;
+}

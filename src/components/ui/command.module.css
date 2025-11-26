@@ -1,0 +1,147 @@
+.root {
+  background: var(--popover);
+  color: var(--popover-foreground);
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.375rem;
+}
+
+.wrapper {
+  /* styles that target nested cmdk elements */
+}
+
+.wrapper :global([cmdk-group-heading]) {
+  color: var(--muted-foreground);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.wrapper :global([cmdk-group]) {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.wrapper :global([cmdk-group]:not([hidden]) ~ [cmdk-group]) {
+  padding-top: 0;
+}
+
+.wrapper :global([cmdk-input-wrapper] svg) {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.wrapper :global([cmdk-input]) {
+  height: 3rem; /* h-12 */
+}
+
+.inputWrapper {
+  display: flex;
+  height: 2.25rem; /* h-9 */
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.iconSmall {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.input {
+  color: inherit;
+  background: transparent;
+  border-radius: 0.375rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 0.875rem;
+  outline: none;
+  width: 100%;
+}
+
+.list {
+  max-height: 300px;
+  scroll-padding-top: 0.25rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.empty {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.group {
+  color: var(--foreground);
+  overflow: hidden;
+  padding: 0.25rem;
+}
+
+.group :global([cmdk-group-heading]) {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.separator {
+  background: var(--border);
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+  height: 1px;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: default;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  font-size: 0.875rem;
+  user-select: none;
+}
+.item[data-selected="true"] {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+.item[aria-disabled="true"], .item[data-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.item :global(svg:not([class*="text-"])) {
+  color: var(--muted-foreground);
+}
+.item :global(svg) {
+  pointer-events: none;
+  flex-shrink: 0;
+}
+.item :global(svg:not([class*="size-"])) {
+  width: 1rem;
+  height: 1rem;
+}
+
+.shortcut {
+  color: var(--muted-foreground);
+  margin-left: auto;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}

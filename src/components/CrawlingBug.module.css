@@ -1,0 +1,151 @@
+@keyframes antennaWiggle {
+  0%, 100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes legWalk {
+  0%, 100% {
+    transform: rotate(-45deg) scaleX(1);
+  }
+  50% {
+    transform: rotate(-60deg) scaleX(1.2);
+  }
+}
+
+.container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  overflow: hidden;
+}
+
+.bug {
+  position: absolute;
+  transition: transform 0.1s;
+}
+
+.bugBody {
+  position: relative;
+}
+
+.bodyMain {
+  width: 2.5rem;
+  height: 1.5rem;
+  background: linear-gradient(to bottom, #78350f, #451a03);
+  border-radius: 9999px;
+  position: relative;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.head {
+  position: absolute;
+  top: -0.375rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.25rem;
+  height: 0.75rem;
+  background-color: #451a03;
+  border-radius: 9999px;
+}
+
+.antenna {
+  position: absolute;
+  width: 0.125rem;
+  height: 0.625rem;
+  background-color: #78350f;
+  transform-origin: bottom;
+  animation: antennaWiggle 0.3s ease-in-out infinite;
+}
+
+.antennaLeft {
+  top: -0.625rem;
+  left: 0.125rem;
+}
+
+.antennaRight {
+  top: -0.625rem;
+  right: 0.125rem;
+  animation-delay: 0.1s;
+}
+
+.stripes {
+  position: absolute;
+  left: 0.375rem;
+  right: 0.375rem;
+  height: 0.125rem;
+  background-color: #92400e;
+  border-radius: 9999px;
+  opacity: 0.5;
+}
+
+.stripe1 {
+  top: 0.125rem;
+}
+
+.stripe2 {
+  top: 0.5rem;
+}
+
+.stripe3 {
+  bottom: 0.125rem;
+}
+
+.leg {
+  position: absolute;
+  width: 0.625rem;
+  height: 0.125rem;
+  background-color: #451a03;
+  animation: legWalk 0.2s ease-in-out infinite;
+}
+
+.legLeft1 {
+  left: 0;
+  top: 0.125rem;
+  transform: rotate(-45deg);
+  transform-origin: right;
+}
+
+.legLeft2 {
+  left: 0;
+  top: 50%;
+  transform: rotate(-45deg);
+  transform-origin: right;
+  animation-delay: 0.15s;
+}
+
+.legLeft3 {
+  left: 0;
+  bottom: 0.125rem;
+  transform: rotate(-45deg);
+  transform-origin: right;
+  animation-delay: 0.3s;
+}
+
+.legRight1 {
+  right: 0;
+  top: 0.125rem;
+  transform: rotate(45deg);
+  transform-origin: left;
+  animation-delay: 0.075s;
+}
+
+.legRight2 {
+  right: 0;
+  top: 50%;
+  transform: rotate(45deg);
+  transform-origin: left;
+  animation-delay: 0.225s;
+}
+
+.legRight3 {
+  right: 0;
+  bottom: 0.125rem;
+  transform: rotate(45deg);
+  transform-origin: left;
+  animation-delay: 0.375s;
+}

@@ -1,0 +1,179 @@
+/* Animação de luzes de natal pisca-pisca */
+@keyframes christmasLights {
+  0% {
+    background-color: #ff0000; /* Vermelho */
+    box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+  }
+  16.66% {
+    background-color: #00ff00; /* Verde */
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+  }
+  33.33% {
+    background-color: #0000ff; /* Azul */
+    box-shadow: 0 0 20px #0000ff, 0 0 40px #0000ff;
+  }
+  50% {
+    background-color: #ffff00; /* Amarelo */
+    box-shadow: 0 0 20px #ffff00, 0 0 40px #ffff00;
+  }
+  66.66% {
+    background-color: #ff00ff; /* Magenta */
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+  }
+  83.33% {
+    background-color: #00ffff; /* Ciano */
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+  }
+  100% {
+    background-color: #ff0000; /* Vermelho */
+    box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.contentWrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.headerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.headerIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.title {
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.subtitle {
+  color: white;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.currentDay {
+  color: white;
+  margin-top: 0.5rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.currentDayHighlight {
+  color: #fef08a;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+}
+
+.extraGiftWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.christmasLightsBtn {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-family: 'Ubuntu', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  cursor: pointer;
+  animation: christmasLights 2s linear infinite;
+  transition: transform 0.2s;
+}
+
+.christmasLightsBtn:hover {
+  transform: scale(1.05);
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .calendarGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: white;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+  font-size: 0.875rem;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.reportButton {
+  padding: 0.5rem 1rem;
+  background-color: #16a34a;
+  color: white;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.reportButton:hover {
+  background-color: #15803d;
+}
+
+.resetButton {
+  padding: 0.5rem 1rem;
+  background-color: #dc2626;
+  color: white;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.resetButton:hover {
+  background-color: #b91c1c;
+}

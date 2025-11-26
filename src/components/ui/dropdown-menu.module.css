@@ -1,0 +1,313 @@
+.content {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+  z-index: 50;
+  max-height: var(--radix-dropdown-menu-content-available-height);
+  min-width: 8rem;
+  origin: var(--radix-dropdown-menu-content-transform-origin);
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 0.375rem;
+  border: 1px solid;
+  padding: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.content[data-state="open"] {
+  animation: fadeIn 200ms, zoomIn 200ms;
+}
+
+.content[data-state="closed"] {
+  animation: fadeOut 200ms, zoomOut 200ms;
+}
+
+.content[data-side="bottom"] {
+  animation: fadeIn 200ms, zoomIn 200ms, slideInFromTop 200ms;
+}
+
+.content[data-side="left"] {
+  animation: fadeIn 200ms, zoomIn 200ms, slideInFromRight 200ms;
+}
+
+.content[data-side="right"] {
+  animation: fadeIn 200ms, zoomIn 200ms, slideInFromLeft 200ms;
+}
+
+.content[data-side="top"] {
+  animation: fadeIn 200ms, zoomIn 200ms, slideInFromBottom 200ms;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  cursor: default;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.125rem;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+  user-select: none;
+}
+
+.item:focus {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.item[data-disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.item[data-inset] {
+  padding-left: 2rem;
+}
+
+.item[data-variant="destructive"] {
+  color: var(--destructive);
+}
+
+.item[data-variant="destructive"]:focus {
+  background-color: rgb(var(--destructive) / 0.1);
+  color: var(--destructive);
+}
+
+.item[data-variant="destructive"] svg {
+  color: var(--destructive) !important;
+}
+
+.item svg:not([class*='text-']) {
+  color: var(--muted-foreground);
+}
+
+.item svg {
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.item svg:not([class*='size-']) {
+  width: 1rem;
+  height: 1rem;
+}
+
+.checkboxItem {
+  position: relative;
+  display: flex;
+  cursor: default;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.125rem;
+  padding: 0.375rem 0.5rem 0.375rem 2rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+  user-select: none;
+}
+
+.checkboxItem:focus {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.checkboxItem[data-disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.checkboxItem svg {
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.checkboxItem svg:not([class*='size-']) {
+  width: 1rem;
+  height: 1rem;
+}
+
+.indicatorWrapper {
+  pointer-events: none;
+  position: absolute;
+  left: 0.5rem;
+  display: flex;
+  width: 0.875rem;
+  height: 0.875rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicatorWrapper svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.radioItem {
+  position: relative;
+  display: flex;
+  cursor: default;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.125rem;
+  padding: 0.375rem 0.5rem 0.375rem 2rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+  user-select: none;
+}
+
+.radioItem:focus {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.radioItem[data-disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.radioItem svg {
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.radioItem svg:not([class*='size-']) {
+  width: 1rem;
+  height: 1rem;
+}
+
+.radioIndicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  fill: currentColor;
+}
+
+.label {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+.label[data-inset] {
+  padding-left: 2rem;
+}
+
+.separator {
+  background-color: var(--border);
+  margin: 0.25rem -0.25rem;
+  height: 1px;
+}
+
+.shortcut {
+  color: var(--muted-foreground);
+  margin-left: auto;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.subTrigger {
+  display: flex;
+  cursor: default;
+  align-items: center;
+  border-radius: 0.125rem;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+  user-select: none;
+}
+
+.subTrigger:focus,
+.subTrigger[data-state="open"] {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.subTrigger[data-inset] {
+  padding-left: 2rem;
+}
+
+.subTrigger svg {
+  margin-left: auto;
+  width: 1rem;
+  height: 1rem;
+}
+
+.subContent {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+  z-index: 50;
+  min-width: 8rem;
+  origin: var(--radix-dropdown-menu-content-transform-origin);
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid;
+  padding: 0.25rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.subContent[data-state="open"] {
+  animation: fadeIn 200ms, zoomIn 200ms;
+}
+
+.subContent[data-state="closed"] {
+  animation: fadeOut 200ms, zoomOut 200ms;
+}
+
+.subContent[data-side="bottom"] {
+  animation: fadeIn 200ms, zoomIn 200ms, slideInFromTop 200ms;
+}
+
+.subContent[data-side="left"] {
+  animation: fadeIn 200ms, zoomIn 200ms, slideInFromRight 200ms;
+}
+
+.subContent[data-side="right"] {
+  animation: fadeIn 200ms, zoomIn 200ms, slideInFromLeft 200ms;
+}
+
+.subContent[data-side="top"] {
+  animation: fadeIn 200ms, zoomIn 200ms, slideInFromBottom 200ms;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+
+@keyframes zoomOut {
+  from { transform: scale(1); }
+  to { transform: scale(0.95); }
+}
+
+@keyframes slideInFromTop {
+  from { transform: translateY(-0.5rem); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInFromBottom {
+  from { transform: translateY(0.5rem); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-0.5rem); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(0.5rem); }
+  to { transform: translateX(0); }
+}

@@ -1,0 +1,299 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+}
+
+.modalContainer {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .modalContainer {
+    padding: 1rem;
+  }
+}
+
+.modal {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 56rem;
+  position: relative;
+  overflow: hidden;
+  max-height: 95vh;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  color: #374151;
+  transition: opacity 0.2s;
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .closeButton {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.closeButton:hover {
+  opacity: 0.7;
+}
+
+.printButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 3rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #dc2626;
+  color: white;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  font-size: 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .printButton {
+    top: 1rem;
+    right: 4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+.printButton:hover {
+  background-color: #b91c1c;
+}
+
+.printButtonText {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .printButtonText {
+    display: inline;
+  }
+}
+
+.captureButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 6rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  font-size: 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .captureButton {
+    top: 1rem;
+    right: 8rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+.captureButton:hover {
+  background-color: #1d4ed8;
+}
+
+.captureButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.captureButtonText {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .captureButtonText {
+    display: inline;
+  }
+}
+
+.reportContent {
+  overflow-y: auto;
+  padding: 1rem;
+  max-height: 95vh;
+  font-family: 'Courier New', monospace;
+}
+
+@media (min-width: 640px) {
+  .reportContent {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .reportContent {
+    padding: 2rem;
+  }
+}
+
+.headerSection {
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.reportHeader {
+  font-size: clamp(0.5rem, 2vw, 0.875rem);
+  line-height: 1.2;
+  margin: 0;
+  overflow: hidden;
+}
+
+.metadataSection {
+  margin-bottom: 1rem;
+  font-size: clamp(0.55rem, 2vw, 0.75rem);
+}
+
+.reportMetadata {
+  line-height: 1.3;
+  margin: 0;
+  overflow: hidden;
+}
+
+.metricsSection {
+  margin-bottom: 1rem;
+  font-size: clamp(0.55rem, 2vw, 0.75rem);
+}
+
+.reportMetrics {
+  line-height: 1.3;
+  margin: 0;
+  overflow: hidden;
+}
+
+.statusSection {
+  margin-bottom: 1rem;
+  font-size: clamp(0.45rem, 1.8vw, 0.65rem);
+}
+
+.reportStatus {
+  line-height: 1.2;
+  margin: 0;
+  overflow: hidden;
+}
+
+.detailSection {
+  margin-bottom: 1rem;
+  font-size: clamp(0.55rem, 2vw, 0.7rem);
+}
+
+.reportDetailHeader {
+  line-height: 1.3;
+  margin: 0;
+  overflow: hidden;
+}
+
+.reportGiftItem {
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.5rem, 1.8vw, 0.7rem);
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.noEvents {
+  line-height: 1.3;
+  margin: 0;
+  padding-left: 0.5rem;
+  font-size: clamp(0.55rem, 2vw, 0.7rem);
+}
+
+.footerSection {
+  margin-top: 1.5rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid #000;
+  font-size: clamp(0.5rem, 1.8vw, 0.65rem);
+}
+
+.reportFooter {
+  line-height: 1.3;
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Print styles */
+@media print {
+  .printHidden {
+    display: none !important;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .backdrop {
+    display: none !important;
+  }
+  
+  .modalContainer {
+    position: relative !important;
+  }
+  
+  .reportContent {
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 1rem !important;
+  }
+  
+  .reportHeader,
+  .reportMetadata,
+  .reportMetrics,
+  .reportStatus,
+  .reportDetailHeader,
+  .reportGiftItem,
+  .reportFooter {
+    font-size: 8pt !important;
+    page-break-inside: avoid;
+  }
+  
+  .reportStatus {
+    font-size: 6pt !important;
+  }
+  
+  pre {
+    overflow: visible !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .reportStatus {
+    font-size: 0.4rem !important;
+  }
+}

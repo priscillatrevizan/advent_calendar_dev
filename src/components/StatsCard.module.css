@@ -1,0 +1,35 @@
+.card {
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-family: 'Ubuntu', sans-serif;
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 1rem;
+  }
+}
+
+.count {
+  font-size: 1.875rem;
+  font-family: 'Ubuntu', sans-serif;
+}

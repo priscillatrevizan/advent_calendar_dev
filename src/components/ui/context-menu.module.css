@@ -1,0 +1,88 @@
+.subTrigger {
+  display: flex;
+  align-items: center;
+  cursor: default;
+  border-radius: 0.125rem;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+  user-select: none;
+  outline: none;
+}
+.subTrigger:focus {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+.subTrigger[data-state="open"] {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+.subTrigger[data-inset="true"] { padding-left: 2rem; }
+.subTrigger svg { pointer-events: none; flex-shrink: 0; }
+.subTrigger svg:not([class*='size-']) { width: 1rem; height: 1rem; }
+.chevron { margin-left: auto; }
+
+.subContent {
+  background: var(--popover);
+  color: var(--popover-foreground);
+  z-index: 50;
+  min-width: 8rem;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  padding: 0.25rem;
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0,0,0,0.1));
+}
+
+.content {
+  background: var(--popover);
+  color: var(--popover-foreground);
+  z-index: 50;
+  max-height: var(--radix-context-menu-content-available-height);
+  min-width: 8rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  padding: 0.25rem;
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0,0,0,0.05));
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: default;
+  border-radius: 0.125rem;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+  user-select: none;
+}
+.item:focus { background: var(--accent); color: var(--accent-foreground); }
+.item[data-variant="destructive"] { color: var(--destructive); }
+.item[data-variant="destructive"]:focus { background: rgba(var(--destructive-rgb, 220,38,38), 0.1); }
+.item[data-disabled="true"] { pointer-events: none; opacity: 0.5; }
+.item[data-inset="true"] { padding-left: 2rem; }
+.item svg { pointer-events: none; flex-shrink: 0; }
+.item svg:not([class*='size-']) { width: 1rem; height: 1rem; }
+
+.checkboxItem { position: relative; display: flex; align-items: center; gap: 0.5rem; cursor: default; border-radius: 0.125rem; padding: 0.375rem 0.5rem; font-size: 0.875rem; user-select: none; }
+.checkboxItem:focus { background: var(--accent); color: var(--accent-foreground); }
+.checkboxItem[data-disabled="true"] { pointer-events: none; opacity: 0.5; }
+.checkboxItem[data-inset="true"] { padding-left: 2rem; }
+
+.radioItem { position: relative; display: flex; align-items: center; gap: 0.5rem; cursor: default; border-radius: 0.125rem; padding: 0.375rem 0.5rem; font-size: 0.875rem; user-select: none; }
+.radioItem:focus { background: var(--accent); color: var(--accent-foreground); }
+.radioItem[data-disabled="true"] { pointer-events: none; opacity: 0.5; }
+.radioItem[data-inset="true"] { padding-left: 2rem; }
+
+.indicatorWrap { pointer-events: none; position: absolute; left: 0.5rem; display: flex; width: 1.125rem; height: 1.125rem; align-items: center; justify-content: center; }
+.indicatorIcon { width: 1rem; height: 1rem; }
+.circleIcon { width: 0.5rem; height: 0.5rem; fill: currentColor; }
+
+.label { color: var(--foreground); padding: 0.375rem 0.5rem; font-size: 0.875rem; font-weight: 500; }
+.label[data-inset="true"] { padding-left: 2rem; }
+
+.separator { background: var(--border); margin-left: -0.25rem; margin-right: -0.25rem; margin-top: 0.25rem; margin-bottom: 0.25rem; height: 1px; }
+
+.shortcut { color: var(--muted-foreground); margin-left: auto; font-size: 0.75rem; letter-spacing: 0.1em; }

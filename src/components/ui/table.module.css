@@ -1,0 +1,82 @@
+.container {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  caption-side: bottom;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.header tr {
+  border-bottom: 1px solid;
+}
+
+.body tr:last-child {
+  border: 0;
+}
+
+.footer {
+  background-color: rgb(var(--muted) / 0.5);
+  border-top: 1px solid;
+  font-weight: 500;
+}
+
+.footer > tr:last-child {
+  border-bottom: 0;
+}
+
+.row {
+  border-bottom: 1px solid;
+  transition: colors 150ms;
+}
+
+.row:hover {
+  background-color: rgb(var(--muted) / 0.5);
+}
+
+.row[data-state="selected"] {
+  background-color: var(--muted);
+}
+
+.head {
+  color: var(--foreground);
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.head:has([role="checkbox"]) {
+  padding-right: 0;
+}
+
+.head [role="checkbox"] {
+  transform: translateY(2px);
+}
+
+.cell {
+  padding: 0.5rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.cell:has([role="checkbox"]) {
+  padding-right: 0;
+}
+
+.cell [role="checkbox"] {
+  transform: translateY(2px);
+}
+
+.caption {
+  color: var(--muted-foreground);
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}

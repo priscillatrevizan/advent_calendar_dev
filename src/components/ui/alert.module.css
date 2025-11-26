@@ -1,0 +1,69 @@
+.alert {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  display: grid;
+  grid-template-columns: 0 1fr;
+  gap: 0.125rem 0;
+  align-items: flex-start;
+}
+
+.alert:has(> svg) {
+  grid-template-columns: calc(var(--spacing) * 4) 1fr;
+  column-gap: 0.75rem;
+}
+
+.alert > svg {
+  width: 1rem;
+  height: 1rem;
+  transform: translateY(0.125rem);
+  color: currentColor;
+}
+
+.alertDefault {
+  background-color: var(--card);
+  color: var(--card-foreground);
+}
+
+.alertDestructive {
+  color: var(--destructive);
+  background-color: var(--card);
+}
+
+.alertDestructive > svg {
+  color: currentColor;
+}
+
+.alertDestructive [data-slot="alert-description"] {
+  color: rgb(var(--destructive) / 0.9);
+}
+
+.title {
+  grid-column-start: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  min-height: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.description {
+  color: var(--muted-foreground);
+  grid-column-start: 2;
+  display: grid;
+  justify-items: start;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.description p {
+  line-height: 1.625;
+}

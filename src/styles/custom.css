@@ -1,0 +1,4 @@
+/* Classe utilitária compartilhada entre componentes */
+.hover\:opacity-70:hover {
+  opacity: 0.7;
+}
