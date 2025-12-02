@@ -1,7 +1,7 @@
 
-  import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
-  import path from 'path';
+import path from 'path';
+import { defineConfig } from 'vite';
 
   export default defineConfig({
     plugins: [react()],
@@ -52,8 +52,6 @@
     },
     build: {
       target: 'esnext',
-      // Vercel expects `dist` by default. Use `dist` to match Vercel's outputDirectory,
-      // or create a `vercel.json` to change the expected directory.
       outDir: 'dist',
     },
     server: {
