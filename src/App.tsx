@@ -9,8 +9,6 @@ import { StatsCard } from './components/StatsCard';
 import BugIcon from './imports/Frame';
 import TreeIcon from './imports/Frame-8-592';
 import StarIcon from './imports/Vector';
-import calendarStyles from './components/CalendarDay.module.css';
-import CloseIcon from './components/CloseIcon';
 
 export interface Gift {
   id: number;
@@ -20,41 +18,40 @@ export interface Gift {
 
 const GOOD_GIFTS: Gift[] = [
   { id: 1, message: "Férias de 24/12 à 04/01 sem precisar deixar nada documentado às pressas.", type: 'good' },
-  { id: 2, message: "Seu código passou na primeira tentativa em 100% dos testes unitários e de integração.", type: 'good' },
-  { id: 3, message: "A feature que você implementou se tornou a mais usada da aplicação.", type: 'good' },
-  { id: 4, message: "O cliente aceitou o orçamento sem pedir por \"só mais uma coisinha\".", type: 'good' },
-  { id: 5, message: "Você ganhou mais 1h/dia de almoço sem precisar repor.", type: 'good' },
+  { id: 2, message: "Seu código passa na primeira tentativa em 100% dos testes unitários e de integração.", type: 'good' },
+  { id: 3, message: "A feature que você implementou se torna a mais usada da aplicação.", type: 'good' },
+  { id: 4, message: "O cliente aceita o orçamento sem pedir por \"só mais uma coisinha\".", type: 'good' },
+  { id: 5, message: "Você ganha um monitor ultrawide de última geração.", type: 'good' },
   { id: 6, message: "A performance do seu serviço melhorou em 50% apenas limpando um cache.", type: 'good' },
-  { id: 7, message: "O GPT tem a resposta exata para o seu problema, no primeiro resultado.", type: 'good' },
-  { id: 8, message: "O merge daquela branch de 6 meses foi feito sem nenhum conflito.", type: 'good' },
-  { id: 9, message: "Seu Pull Request foi aprovado em 5 minutos sem nenhum comentário.", type: 'good' },
-  { id: 10, message: "Você vai ter home-office com folga extra no dia do aniversário.", type: 'good' },
-  { id: 11, message: "Seu deploy de sexta-feira à tarde ocorreu sem falhas e sem vigilância.", type: 'good' },
-  { id: 12, message: "Um bug antigo e irritante se resolveu misteriosamente sozinho.", type: 'good' },
-  { id: 13, message: "O time de QA te elogiou publicamente pela qualidade do código.", type: 'good' },
-  { id: 14, message: "Você vai encontrar um atalho de teclado novo que acelerou seu trabalho.", type: 'good' },
-  { id: 15, message: "Seu café vai estar sempre quente e no ponto ideal durante o dia todo.", type: 'good' },
-  { id: 16, message: "Sua sugestão na daily foi aceita e implementada rapidamente.", type: 'good' },
-  { id: 17, message: "O CEO te mandou uma mensage: parabéns pelo projeto!", type: 'good' },
-  { id: 18, message: "O time decidiu migrar de daily de 15min para uma reunião semanal de 15 minutos.", type: 'good' },
-  { id: 19, message: "Você vai encontrar documentação perfeita, completa e atualizada.", type: 'good' },
-  { id: 20, message: "Seu computador vai receber upgrade com 64GB de RAM e SSD NVMe.", type: 'good' },
-  { id: 21, message: "O build do projeto, que demorava 10 minutos, agora vai levar 30 segundos.", type: 'good' },
-  { id: 22, message: "Quem esticar a daily vai te mandar PIX", type: 'good' },
-  { id: 23, message: "Você vai poder escolher a marca do café da empresa.", type: 'good' },
-  { id: 24, message: "O ambiente de homologação vai estar sempre idêntico ao de produção.", type: 'good' },
+  { id: 7, message: "Stack Overflow tem a resposta exata para o seu problema, no primeiro resultado.", type: 'good' },
+  { id: 8, message: "O merge de uma branch de 6 meses é feito sem nenhum conflito.", type: 'good' },
+  { id: 9, message: "Seu Pull Request é aprovado em 5 minutos sem nenhum comentário.", type: 'good' },
+  { id: 10, message: "Você recebe um vale-presente de R$ 500 para cursos e livros de tecnologia.", type: 'good' },
+  { id: 11, message: "Seu deploy de sexta-feira à tarde ocorre sem falhas e sem vigilância.", type: 'good' },
+  { id: 12, message: "Um bug antigo e irritante se resolve misteriosamente sozinho.", type: 'good' },
+  { id: 13, message: "O time de QA te elogia publicamente pela qualidade do código.", type: 'good' },
+  { id: 14, message: "Você encontra um atalho de teclado novo que acelera seu trabalho.", type: 'good' },
+  { id: 15, message: "Seu café está sempre quente e no ponto ideal durante o dia todo.", type: 'good' },
+  { id: 16, message: "Você descobre que seu código pode ser reduzido em 80% usando um método nativo.", type: 'good' },
+  { id: 17, message: "O CEO te manda uma mensagem de parabéns pelo projeto.", type: 'good' },
+  { id: 18, message: "O time decide migrar de reunião diária de 1h para uma de 15 minutos.", type: 'good' },
+  { id: 19, message: "Você encontra documentação perfeita, completa e atualizada.", type: 'good' },
+  { id: 20, message: "Seu computador é trocado por um modelo com 64GB de RAM e SSD NVMe.", type: 'good' },
+  { id: 21, message: "O build do projeto, que demorava 10 minutos, agora leva 30 segundos.", type: 'good' },
+  { id: 22, message: "Você aprende uma nova tecnologia que é divertida e útil ao mesmo tempo.", type: 'good' },
+  { id: 23, message: "Seu mentor te oferece uma sessão de coaching sobre um tema que você ama.", type: 'good' },
+  { id: 24, message: "O ambiente de homologação está sempre idêntico ao de produção.", type: 'good' },
   { id: 25, message: "Sua query de banco de dados mais complexa executa em 1 milissegundo.", type: 'good' },
-  { id: 26, message: "Você vai receber 100% de cobertura nos testes de código legado.", type: 'good' },
-  { id: 27, message: "O time de infraestrutura vai te dar acesso total de root na sua máquina local.", type: 'good' },
-  { id: 28, message: "Aquele dev palestrinha vai sair do time.", type: 'good' },
+  { id: 26, message: "Você recebe 100% de cobertura nos testes de código legado.", type: 'good' },
+  { id: 27, message: "O time de infraestrutura te dá acesso total de root na sua máquina local.", type: 'good' },
+  { id: 28, message: "Você ganha um fone de ouvido com cancelamento de ruído de ponta.", type: 'good' },
   { id: 29, message: "O próximo projeto será escrito do zero na sua stack favorita.", type: 'good' },
-  { id: 30, message: "O time de design vai te entregar todos os assets no formato correto e otimizado.", type: 'good' },
-  { id: 31, message: "A IA vai codar por você de forma coerente a partir de agora.", type: 'good' },
-  { id: 32, message: "A Internet na sua casa não vai cair durante nenhum job importante.", type: 'good' },
-  { id: 33, message: "Seu teclado mecânico favorito está em promoção e com cupom cumulativo.", type: 'good' },
-  { id: 34, message: "A empresa aboliu o uso da Avaliação de Clima.", type: 'good' },
-  { id: 35, message: "Você vai poder escolher seu horário de trabalho ideal.", type: 'good' },
-  
+  { id: 30, message: "O time de design te entrega todos os assets no formato correto e otimizado.", type: 'good' },
+  { id: 31, message: "Você descobre que a ferramenta de linting te salvou de um erro grave.", type: 'good' },
+  { id: 32, message: "A Internet na sua casa não cai durante nenhuma sprint review.", type: 'good' },
+  { id: 33, message: "Seu teclado mecânico favorito está em promoção e você o compra.", type: 'good' },
+  { id: 34, message: "O framework que você usa lança uma atualização que corrige todos os seus problemas.", type: 'good' },
+  { id: 35, message: "Você encontra um colega que ama refatorar tanto quanto você.", type: 'good' },
   { id: 36, message: "O time de marketing te traz métricas que comprovam o valor do seu trabalho.", type: 'good' },
   { id: 37, message: "Sua linguagem de programação favorita tem a maior alta no índice TIOBE.", type: 'good' },
   { id: 38, message: "Você recebe um bônus salarial inesperado no final do ano.", type: 'good' },
@@ -134,14 +131,7 @@ interface OpenedDay {
 
 export default function App() {
   const [currentDay, setCurrentDay] = useState(1);
-  const [openedDays, setOpenedDays] = useState<OpenedDay[]>(() => {
-    try {
-      const stored = localStorage.getItem('adventCalendar_openedDays');
-      return stored ? JSON.parse(stored) as OpenedDay[] : [];
-    } catch (e) {
-      return [];
-    }
-  });
+  const [openedDays, setOpenedDays] = useState<OpenedDay[]>([]);
   const [showConfetti, setShowConfetti] = useState(false);
   const [showBug, setShowBug] = useState(false);
   const [clickedPosition, setClickedPosition] = useState<{ x: number; y: number } | null>(null);
@@ -151,15 +141,30 @@ export default function App() {
   const [confettiTimeoutId, setConfettiTimeoutId] = useState<number | null>(null);
   const [bugTimeoutId, setBugTimeoutId] = useState<number | null>(null);
 
-  // Inicializar valores dependentes do ambiente no mount
+  // Inicializar dados do localStorage
   useEffect(() => {
+    const storedDays = localStorage.getItem('adventCalendar_openedDays');
+    if (storedDays) {
+      setOpenedDays(JSON.parse(storedDays));
+    }
+
     // Para testes, você pode mudar o dia atual aqui
     // Descomente a linha abaixo para testar diferentes dias
     // setCurrentDay(5);
-
-    // Usar data do sistema (dia do mês)
-    const today = new Date().getDate();
-    setCurrentDay(Math.min(today, 24)); // Limitar a 24
+    
+    // Usar data real do sistema
+    const now = new Date();
+    const currentMonth = now.getMonth(); // 0 = Janeiro, 11 = Dezembro
+    const currentDayOfMonth = now.getDate();
+    
+    // Se estamos em dezembro (mês 11), usar o dia atual
+    // Senão, liberar todos os dias (para testes fora de dezembro)
+    if (currentMonth === 11) {
+      setCurrentDay(Math.min(currentDayOfMonth, 24)); // Limitar a 24
+    } else {
+      // Fora de dezembro, liberar todos os dias para teste
+      setCurrentDay(24);
+    }
   }, []);
 
   const handleDayClick = (day: number) => {
@@ -377,8 +382,7 @@ export default function App() {
         </div>
 
         <div className={styles.footer}>
-          <p>Dica: Para testar, altere o dia atual no código!</p>
-          
+                
           {/* Botões de ação */}
           <div className={styles.actionButtons}>
             {openedDays.length > 0 && (
@@ -390,12 +394,13 @@ export default function App() {
               </button>
             )}
             
-            <button
+            {/* Botão Resetar Calendário - Comentado para uso em produção */}
+            {/* <button
               onClick={resetCalendar}
               className={styles.resetButton}
             >
               Resetar Calendário
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -412,63 +417,6 @@ export default function App() {
           badGiftsCount={badGiftsCount}
           onClose={() => setShowPerformanceReport(false)}
         />
-      )}
-
-      {/* Modal do Presente Extra */}
-      {showExtraGift && (
-        <>
-          <div className={calendarStyles.backdrop} onClick={() => setShowExtraGift(false)} />
-          <div className={calendarStyles.modalContainer}>
-            <div
-              className={`${calendarStyles.modalContent} ${
-                badGiftsCount > goodGiftsCount ? calendarStyles.modalContentBad : calendarStyles.modalContentGood
-              }`}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className={`${calendarStyles.closeButton} ${
-                  badGiftsCount > goodGiftsCount ? calendarStyles.closeButtonBad : calendarStyles.closeButtonGood
-                }`}
-                onClick={() => setShowExtraGift(false)}
-              >
-                <CloseIcon />
-              </button>
-
-              <div className={calendarStyles.modalInner}>
-                <div className={calendarStyles.modalHeader}>
-                  <p>Presente Extra 2025</p>
-                </div>
-
-                <div className={calendarStyles.modalTitle}>
-                  <div className={calendarStyles.modalIcon}>
-                    {badGiftsCount > goodGiftsCount ? <BugIcon /> : <StarIcon />}
-                  </div>
-                  <p className={
-                    badGiftsCount > goodGiftsCount ? calendarStyles.modalTitleTextBad : calendarStyles.modalTitleTextGood
-                  }>
-                    {badGiftsCount > goodGiftsCount ? 'Eita...' : 'Parabéns!'}
-                  </p>
-                </div>
-
-                <div className={calendarStyles.modalMessage}>
-                  <p className={
-                    badGiftsCount > goodGiftsCount ? calendarStyles.modalMessageTextBad : calendarStyles.modalMessageTextGood
-                  }>
-                    {getExtraGiftMessage()}
-                  </p>
-                </div>
-
-                <div className={calendarStyles.modalFooter}>
-                  <span className={
-                    badGiftsCount > goodGiftsCount ? calendarStyles.modalFooterTextBad : calendarStyles.modalFooterTextGood
-                  }>
-                    🎁
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
       )}
     </div>
   );
